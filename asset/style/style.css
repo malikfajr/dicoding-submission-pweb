@@ -1,0 +1,332 @@
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../font/Manrope.ttf");
+}
+
+/* 
+ * Source pallete: https://colorhunt.co/palette/352f445c5470b9b4c7faf0e6
+ */
+:root {
+  --primary-color: #faf0e6;
+  --secondary-color: #b9b4c7;
+  --third-color: #5c5470;
+  --background-color: #352f44;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Manrope", sans-serif;
+  color: var(--secondary-color);
+}
+
+html {
+  max-width: 1400px;
+  margin: auto;
+  background-color: var(--background-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  color: var(--primary-color);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  position: sticky;
+  top: 0;
+  right: 0;
+  background-color: var(--third-color);
+  padding: 0px 1rem;
+}
+
+nav {
+  display: flex;
+  flex-grow: 1;
+  /* gap: 8px; */
+  justify-content: end;
+}
+
+.nav-item {
+  padding: 0px 8px;
+  font-size: 1.25em;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item:hover {
+  background-color: var(--background-color);
+}
+
+.nav-item:active {
+  color: var(--primary-color);
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+#humberger-button {
+  display: none;
+  cursor: pointer;
+  height: 100%;
+  width: auto;
+  overflow: visible;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  z-index: 2;
+  margin-right: 8px;
+}
+
+#humberger-button span,
+#humberger-button span:before,
+#humberger-button span:after {
+  background: #fff;
+  display: block;
+  height: 2px;
+  opacity: 1;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+}
+
+#humberger-button span:before,
+#humberger-button span:after {
+  content: "";
+}
+#humberger-button span:before {
+  left: 0px;
+  top: -10px;
+  width: 27px;
+}
+#humberger-button span {
+  right: 0px;
+  top: 50%;
+  bottom: 50%;
+  width: 27px;
+}
+#humberger-button span:after {
+  left: 0px;
+  top: 10px;
+  width: 27px;
+}
+
+#humberger-button.close span:before {
+  top: 0px;
+  transform: rotate(90deg);
+  width: 27px;
+}
+#humberger-button.close span {
+  transform: rotate(-45deg);
+  top: 13px;
+  width: 27px;
+}
+#humberger-button.close span:after {
+  top: 0px;
+  left: 0;
+  transform: rotate(90deg);
+  opacity: 0;
+  width: 0;
+}
+
+main {
+  display: flex;
+  padding: 16px 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+article {
+  border-bottom: var(--third-color) solid 2px;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  /* min-height: 100vh; */
+}
+
+article p {
+  text-indent: 36px;
+  text-align: justify;
+  padding-top: 16px;
+  line-height: 24px;
+}
+
+article ul {
+  list-style-position: inside;
+  padding: 0;
+}
+
+.project-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+  width: 30%;
+  padding: 8px;
+  border: var(--secondary-color) 1px solid;
+  border-radius: 16px;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.education-card {
+  display: flex;
+  flex-direction: row;
+  margin-top: 8px;
+  padding-bottom: 4px;
+  gap: 8px;
+}
+
+.education-card img {
+  max-width: 80px;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 30%;
+  padding-left: 1rem;
+}
+
+aside h3 {
+  margin-top: 8px;
+}
+
+.image-wrap {
+  padding: auto 8px;
+  max-width: 250px;
+}
+
+.image-wrap img {
+  width: 100%;
+  height: auto;
+}
+
+.rounded {
+  border-radius: 100%;
+}
+
+.contact-icon {
+  max-width: 50px;
+  height: auto;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  padding: 16px 0px;
+  justify-content: center;
+  font-style: italic;
+}
+
+@media screen and (max-width: 767px) {
+  .project-wrap {
+    justify-content: space-around;
+    gap: 4px;
+  }
+  .project-card {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 577px) {
+  .project-wrap {
+    justify-content: space-around;
+    gap: 4px;
+  }
+  .project-card {
+    width: 100%;
+  }
+
+  #humberger-button {
+    display: block;
+    z-index: 25;
+  }
+
+  header h1 {
+    flex-grow: 1;
+    background-color: var(--third-color);
+    z-index: 20;
+  }
+
+  nav {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    background-color: var(--third-color);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-close {
+    bottom: 100%;
+  }
+
+  .nav-link {
+    z-index: 15;
+  }
+
+  main {
+    flex-direction: column-reverse;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  aside {
+    width: 100%;
+    border-bottom: var(--third-color) solid 2px;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  header,
+  main,
+  aside {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .education-card {
+    display: flex;
+    flex-direction: column;
+  }
+}
